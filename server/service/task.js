@@ -1,7 +1,7 @@
-import { createTask, getTasks } from "../data/task.js";
+import { createTask, getTasks, deleteTask, updateTask } from "../data/task.js";
 
-export async function getTaskService() {
-  return await getTasks();
+export async function getTaskService(userId) {
+  return await getTasks(userId);
 }
 
 export async function getTaskByIdService(id) {
@@ -9,13 +9,14 @@ export async function getTaskByIdService(id) {
 }
 
 export async function createTaskService(data) {
-  console.log(data);
   const { title, content, userId } = data;
   return await createTask(title, content, userId);
 }
 
-export async function deleteTaskService(id) {}
+export async function deleteTaskService(id) {
+  return await deleteTask(id);
+}
 
-export async function updateTaskService(id) {
-  return {};
+export async function updateTaskService(id, title, content) {
+  return await updateTask(id, title, content);
 }
