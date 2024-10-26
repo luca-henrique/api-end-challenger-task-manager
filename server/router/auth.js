@@ -19,7 +19,9 @@ router.post("/sign-in", async function (req, response) {
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
-      return response.status(401).json({ error: "Authentication failed" });
+      return response
+        .status(401)
+        .json({ error: "Erro ao autenticar. Verifique suas credenciais." });
     }
 
     const token = jsonwebtoken.sign(

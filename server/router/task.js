@@ -17,7 +17,6 @@ router.get("/private", authMiddleware, (req, res) => {
 
 router.get("/task", authMiddleware, async function (req, res) {
   const { userId } = req;
-  console.log(userId);
   const data = await getTaskService(userId);
   res.status(200).json({ data });
 });
@@ -29,7 +28,9 @@ router.get("/task/:id", async function (req, res) {
 });
 
 router.post("/task", async function (req, res) {
+  const { userId } = req;
   const task = req.body;
+  const custom = { ...task, userId };
   const tasks = await createTaskService(task);
   res.status(200).json({ data: tasks });
 });
