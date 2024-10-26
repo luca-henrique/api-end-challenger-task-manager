@@ -48,5 +48,5 @@ Enviar o link do github com os repositórios para os seguintes e-mails:
 - alex.nunes@gtrademark.com.br
 - denis.caldeira@gtrademark.com.br
 
-https://www.figma.com/community/file/1304448927612265720
-https://www.youtube.com/watch?v=MwltB8NULC8
+https://medium.com/@ajayranabhatofficial/mastering-unit-testing-in-express-with-jest-a-real-world-guide-18c46724e864
+https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
