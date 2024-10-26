@@ -1,6 +1,5 @@
 import express from "express";
 import routerTask from "./router/task.js";
-import authMiddleware from "./middleware/auth.js";
 import routerAuth from "./router/auth.js";
 import routerUser from "./router/user.js";
 import cors from "cors";
@@ -19,4 +18,4 @@ app.use(routerTask);
 app.use(routerAuth);
 app.use(routerUser);
 
-app.listen(3001);
+export default app;

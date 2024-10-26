@@ -11,23 +11,19 @@ import {
 
 const router = express.Router();
 
-router.get("/private", authMiddleware, (req, res) => {
-  res.status(200).json({ message: "Protected route accessed" });
-});
-
 router.get("/task", authMiddleware, async function (req, res) {
   const { userId } = req;
   const data = await getTaskService(userId);
   res.status(200).json({ data });
 });
 
-router.get("/task/:id", async function (req, res) {
+router.get("/task/:id", authMiddleware, async function (req, res) {
   const { id } = req.params;
   const tasks = await getTaskByIdService(id);
   res.status(200).json({ data: tasks });
 });
 
-router.post("/task", async function (req, res) {
+router.post("/task", authMiddleware, async function (req, res) {
   const { userId } = req;
   const task = req.body;
   const custom = { ...task, userId };
@@ -35,14 +31,14 @@ router.post("/task", async function (req, res) {
   res.status(200).json({ data: tasks });
 });
 
-router.put("/task/:id", async function (req, res) {
+router.put("/task/:id", authMiddleware, async function (req, res) {
   const { title, content } = req.body;
   const { id } = req.params;
   const tasks = await updateTaskService(id, title, content);
   res.status(200).json({ data: tasks });
 });
 
-router.delete("/task/:id", async function (req, res) {
+router.delete("/task/:id", authMiddleware, async function (req, res) {
   const { id } = req.params;
   await deleteTaskService(id);
   res.status(200).json({ message: "Foi de arrasta" });
