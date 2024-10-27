@@ -32,7 +32,7 @@ router.post("/sign-in", async function (req, response) {
 
     return response.status(200).json({ data: { user, token } });
   } catch (error) {
-    return res.send(error);
+    return response.send(error);
   }
 });
 

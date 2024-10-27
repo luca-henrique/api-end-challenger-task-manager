@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-export const PRIVATE_KEY = "1010FFF";
+export const PRIVATE_KEY = process.env.PRIVATE_KEY || "1010FFF";
 
 export default function verifyToken(req, res, next) {
   const token = req.header("Authorization");
