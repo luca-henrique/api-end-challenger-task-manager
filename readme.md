@@ -93,7 +93,7 @@ Retorna todas as tarefas do usuário autenticado.
 
 - **Requisição**
   - Headers:
-    - `Authorization: Bearer <token>`
+    - `Authorization: <token>`
 - **Resposta**
   - **200 OK**:
     ```json
@@ -110,7 +110,7 @@ Retorna uma tarefa específica pelo seu ID.
 
 - **Requisição**
   - Headers:
-    - `Authorization: Bearer <token>`
+    - `Authorization: <token>`
   - URL Params:
     - `id`: ID da tarefa
 - **Resposta**
@@ -130,7 +130,7 @@ Cria uma nova tarefa para o usuário autenticado.
 - **Requisição**
 
   - Headers:
-    - `Authorization: Bearer <token>`
+    - `Authorization: <token>`
   - Body:
     ```json
     {
@@ -156,7 +156,7 @@ Atualiza uma tarefa específica pelo ID.
 - **Requisição**
 
   - Headers:
-    - `Authorization: Bearer <token>`
+    - `Authorization: <token>`
   - URL Params:
     - `id`: ID da tarefa
   - Body:
@@ -183,7 +183,7 @@ Deleta uma tarefa específica pelo ID.
 
 - **Requisição**
   - Headers:
-    - `Authorization: Bearer <token>`
+    - `Authorization: <token>`
   - URL Params:
     - `id`: ID da tarefa
 - **Resposta**
